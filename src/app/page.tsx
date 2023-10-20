@@ -3,6 +3,8 @@ import { SettingsTabs } from '@/components/SettingsTabs'
 import { Mail } from 'lucide-react'
 import * as FileInput from '@/components/Form/FileInput'
 import { Select } from '@/components/Form/Select'
+import { SelectLabel } from '@radix-ui/react-select'
+import { SelectItem } from '@/components/Form/Select/SelecteItem'
 
 export default function Home() {
   return (
@@ -116,7 +118,10 @@ export default function Home() {
               Country
             </label>
 
-            <Select />
+            <Select placeholder="Select a country...">
+              <SelectItem value="BR" text="Brazil" />
+              <SelectItem value="US" text="United States" />
+            </Select>
           </div>
 
           {/* Input Timezone */}
@@ -127,6 +132,16 @@ export default function Home() {
             >
               Timezone
             </label>
+            <Select placeholder="Select a Timezone...">
+              <SelectItem
+                value="utc8"
+                text="Pacific Standard Time (UTC-08:00)"
+              />
+              <SelectItem
+                value="utc3"
+                text="America Standard Brazilia (UTC-03:00)"
+              />
+            </Select>
           </div>
 
           {/* Input Bio */}

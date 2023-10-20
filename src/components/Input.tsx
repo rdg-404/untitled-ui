@@ -5,7 +5,7 @@ type InputRootProps = ComponentProps<'div'>
 function Root(props: InputRootProps) {
   return (
     <div
-      className="mx-1 flex w-full items-center gap-2 rounded-lg border border-zinc-900 px-3 py-2 shadow-sm dark:border-zinc-900"
+      className=" flex w-full items-center gap-2 rounded-lg border border-zinc-900 px-3 py-2 shadow-sm dark:border-zinc-900"
       {...props}
     />
   )
