@@ -2,6 +2,7 @@ import { Input } from '@/components/Input'
 import { SettingsTabs } from '@/components/SettingsTabs'
 import { Mail } from 'lucide-react'
 import * as FileInput from '@/components/Form/FileInput'
+import { Select } from '@/components/Form/Select'
 
 export default function Home() {
   return (
@@ -40,14 +41,14 @@ export default function Home() {
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-900"
         >
           {/* Input Name */}
-          <div className="grid grid-cols-form gap-3">
+          <div className="grid grid-cols-form gap-3 ">
             <label
               htmlFor="firstName"
               className="text-md font-medium text-zinc-700"
             >
               Name
             </label>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6 ">
               <Input.Root>
                 <Input.Control id="firstName" defaultValue="Rodrigo" />
               </Input.Root>
@@ -114,6 +115,8 @@ export default function Home() {
             <label htmlFor="role" className="text-md font-medium text-zinc-700">
               Country
             </label>
+
+            <Select />
           </div>
 
           {/* Input Timezone */}
