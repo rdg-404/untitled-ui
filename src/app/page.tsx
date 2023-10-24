@@ -159,43 +159,28 @@ export default function Home() {
                 </Select>
 
                 <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-violet-950"
-                  >
+                  <Button type="button" variant="icon">
                     <Bold className="h-5 w-5 text-zinc-500" strokeWidth={3} />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-violet-950"
-                  >
+                  <Button type="button" variant="icon">
                     <Italic className="h-5 w-5 text-zinc-500" strokeWidth={3} />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-violet-950"
-                  >
+                  <Button type="button" variant="icon">
                     <Link className="h-5 w-5 text-zinc-500" strokeWidth={3} />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-violet-950"
-                  >
+                  <Button type="button" variant="icon">
                     <List className="h-5 w-5 text-zinc-500" strokeWidth={3} />
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-violet-950"
-                  >
+                  <Button type="button" variant="icon">
                     <ListOrdered
                       className="h-5 w-5 text-zinc-500"
                       strokeWidth={3}
                     />
-                  </button>
+                  </Button>
                 </div>
               </div>
 
