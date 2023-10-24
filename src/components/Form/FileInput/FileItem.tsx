@@ -1,17 +1,48 @@
 import { Button } from '@/components/Button'
 import { formatBytes } from '@/utils/format-bytes'
 import { UploadCloud, Trash, CheckCircle2 } from 'lucide-react'
+import { tv, VariantProps } from 'tailwind-variants'
 
-export interface FileItemProps {
+const fileItem = tv({
+  slots: {
+    wrapper:
+      'group flex items-start gap-4 rounded-lg border border-zinc-900 p-4',
+
+    icon: 'rounded-full  bg-violet-950 p-2 text-violet-400',
+    deleteButton: '',
+  },
+
+  variants: {
+    state: {
+      progress: {
+        wrapper: '',
+      },
+      complete: {
+        wrapper: 'border-zinc-900',
+      },
+      error: {
+        wrapper: 'bg-zinc-950 border-error-400',
+        icon: 'bg-error-800 text-error-600',
+        deleteButton: 'text-error-700 hover:text-error-600 hover:bg-error-900',
+      },
+    },
+  },
+
+  defaultVariants: {
+    state: 'progress',
+  },
+})
+
+export interface FileItemProps extends VariantProps<typeof fileItem> {
   name: string
   size: number
 }
 
-export function FileItem({ name, size }: FileItemProps) {
-  const state = 'complete' as 'progress' | 'error' | 'complete'
+export function FileItem({ name, size, state }: FileItemProps) {
+  const { wrapper, icon, deleteButton } = fileItem({ state })
   return (
-    <div className="group flex items-start gap-4 rounded-lg border border-zinc-900 p-4">
-      <div className="rounded-full  bg-violet-950 p-2 text-violet-400">
+    <div className={wrapper()}>
+      <div className={icon()}>
         <UploadCloud className="h-4 w-4" />
       </div>
 
@@ -54,8 +85,8 @@ export function FileItem({ name, size }: FileItemProps) {
       {state === 'complete' ? (
         <CheckCircle2 className="h-5 w-5 fill-violet-800 text-violet-400" />
       ) : (
-        <Button type="button" variant="icon">
-          <Trash className="h-5 w-5 text-zinc-400" />
+        <Button type="button" variant="icon" className={deleteButton()}>
+          <Trash className="h-5 w-5" />
         </Button>
       )}
     </div>
