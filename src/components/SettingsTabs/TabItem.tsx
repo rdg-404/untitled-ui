@@ -15,7 +15,7 @@ export function TabItem({ value, title, isSelected }: TabItemProps) {
       value={value}
       className="group relative px-1 pb-4 text-sm font-medium text-zinc-500 outline-none hover:text-violet-400 data-[state=active]:text-violet-400"
     >
-      <span className="rounded-sm group-focus-visible:ring-2 group-focus-visible:ring-violet-400">
+      <span className=" whitespace-nowrap rounded-sm group-focus-visible:ring-2 group-focus-visible:ring-violet-400">
         {title}
       </span>
 
